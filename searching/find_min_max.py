@@ -1,3 +1,6 @@
+import math
+
+
 def find_min_max_naive(array):
     min = array[0]
     max = array[0]
@@ -36,6 +39,27 @@ def find_min_max_optimal(array):
     return [min, max]
 
 
+def find_min_max_recursive(array, left, right):
+    if left == right:
+        return [array[left], array[left]]
+
+    middle = math.floor((left + right) / 2)
+    left_min_max = find_min_max_recursive(array, left, middle)
+    right_min_max = find_min_max_recursive(array, middle + 1, right)
+    min_max = [0, 0]
+    if left_min_max[0] < right_min_max[0]:
+        min_max[0] = left_min_max[0]
+    else:
+        min_max[0] = right_min_max[0]
+
+    if left_min_max[1] > right_min_max[1]:
+        min_max[1] = left_min_max[1]
+    else:
+        min_max[1] = right_min_max[1]
+
+    return min_max
+
+
 array = [3, 6, 1, 9, 10, 4, -4, 6, 12, 5, 11]
 print('Naive algorithm')
 result = find_min_max_naive(array)
@@ -43,4 +67,8 @@ print(f'Min: {result[0]}, Max: {result[1]}')
 
 print('Optimal algorithm')
 result = find_min_max_optimal(array)
+print(f'Min: {result[0]}, Max: {result[1]}')
+
+print('Recursive algorithm')
+result = find_min_max_recursive(array, 0, len(array) - 1)
 print(f'Min: {result[0]}, Max: {result[1]}')
