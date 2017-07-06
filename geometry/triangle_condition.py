@@ -1,0 +1,12 @@
+def can_create_triangle(a, b, c):
+    return a < b + c and b < a + c and c < a + b
+
+
+a = 3
+b = 8
+c = 9
+
+if can_create_triangle(a, b, c):
+    print(f'Triangle can be created from {a}, {b} and {c}')
+else:
+    print(f'Triangle cannot be created from {a}, {b} and {c}')
