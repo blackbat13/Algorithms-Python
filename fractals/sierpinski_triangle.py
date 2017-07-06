@@ -1,5 +1,4 @@
 import turtle
-import math
 
 
 def sierpinski_triangle(rank, length):
@@ -12,7 +11,7 @@ def sierpinski_triangle(rank, length):
         return
 
     for _ in range(0, 3):
-        sierpinski_triangle(rank - 1, math.floor(length / 2))
+        sierpinski_triangle(rank - 1, length / 2)
         turtle.forward(length)
         turtle.left(120)
 
