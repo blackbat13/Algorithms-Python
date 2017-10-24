@@ -1,15 +1,18 @@
 def floyd_warshall(graph):
     for k in range(0, len(graph)):
-        new_graph = graph[:]
+        # new_graph = graph[:]
         for i in range(0, len(graph)):
             for j in range(0, len(graph)):
                 if i == j or k == i or k == j:
                     continue
 
                 if graph[i][k] + graph[k][j] < graph[i][j]:
-                    new_graph[i][j] = graph[i][k] + graph[k][j]
+                    graph[i][j] = graph[i][k] + graph[k][j]
 
-        graph = new_graph[:]
+        # graph = graph[:]
+        for row in graph:
+            print(row)
+        print()
 
 
 f = 1000000000
