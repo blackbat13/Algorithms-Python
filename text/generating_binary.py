@@ -12,7 +12,8 @@ def generate_binary(n):
     return new_result
 
 
-binary_numbers = generate_binary(3)
+number_of_bits = int(input('Enter number of bits: '))
+binary_numbers = generate_binary(number_of_bits)
 number = 0
 for binary_number in binary_numbers:
     print(f'{binary_number} = {number}')

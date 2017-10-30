@@ -14,7 +14,8 @@ def generate_grey(n):
     return new_result
 
 
-grey_numbers = generate_grey(3)
+number_of_bits = int(input('Enter number of bits: '))
+grey_numbers = generate_grey(number_of_bits)
 number = 0
 for grey_number in grey_numbers:
     print(f'{grey_number} = {number}')
