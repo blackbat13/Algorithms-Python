@@ -21,6 +21,7 @@ def count_occurrences(element, array):
 
     return count
 
+
 array = [1, 2, 5, 5, 7, 5, 5, 10, 5, 5]
 majority = find_leader(array)
 if count_occurrences(majority, array) >= len(array) / 2:

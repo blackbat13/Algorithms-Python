@@ -61,14 +61,14 @@ def find_min_max_recursive(array, left, right):
 
 
 array = [3, 6, 1, 9, 10, 4, -4, 6, 12, 5, 11]
-print('Naive algorithm')
+print('Naive algorithm: ')
 result = find_min_max_naive(array)
 print(f'Min: {result[0]}, Max: {result[1]}')
 
-print('Optimal algorithm')
+print('Optimal algorithm: ')
 result = find_min_max_optimal(array)
 print(f'Min: {result[0]}, Max: {result[1]}')
 
-print('Recursive algorithm')
+print('Recursive algorithm: ')
 result = find_min_max_recursive(array, 0, len(array) - 1)
 print(f'Min: {result[0]}, Max: {result[1]}')

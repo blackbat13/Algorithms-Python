@@ -10,8 +10,8 @@ def substring_pos(a, b):
     return -1
 
 
-a = input('Enter string to search in')
-b = input('Enter string to search for')
+a = input('Enter string to search in: ')
+b = input('Enter string to search for: ')
 
 pos = substring_pos(a, b)
 if pos == -1:

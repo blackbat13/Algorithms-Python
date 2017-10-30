@@ -32,7 +32,7 @@ def binary_search_recursive(array, number, left, right):
 
 
 array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-number = int(input('Enter number to find'))
+number = int(input('Enter number to find: '))
 index1 = binary_search_iterative(array, number)
 index2 = binary_search_recursive(array, number, 0, len(array))
 if index1 != index2:

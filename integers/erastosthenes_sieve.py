@@ -19,6 +19,6 @@ def print_prime_numbers(prime):
             print(i)
 
 
-n = int(input('Enter number'))
+n = int(input('Enter number: '))
 prime = sieve(n)
 print_prime_numbers(prime)

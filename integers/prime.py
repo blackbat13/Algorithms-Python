@@ -12,7 +12,7 @@ def is_prime(n):
     return True
 
 
-n = int(input('Enter number'))
+n = int(input('Enter number: '))
 if is_prime(n):
     print(f'{n} is a prime number')
 else:

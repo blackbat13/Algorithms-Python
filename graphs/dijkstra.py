@@ -5,8 +5,8 @@ def dijkstra(graph, node):
     distances[node] = 0
 
     queue = []
-    for (new_node, distance) in graph[node]:
-        queue.append((node, new_node, distance))
+    for (next_node, distance) in graph[node]:
+        queue.append((node, next_node, distance))
     while len(queue) > 0:
         node = queue[0][1]
         from_node = queue[0][0]
@@ -14,8 +14,8 @@ def dijkstra(graph, node):
         queue.pop(0)
         if new_distance < distances[node]:
             distances[node] = new_distance
-            for (new_node, distance) in graph[node]:
-                queue.append((node, new_node, distance))
+            for (next_node, distance) in graph[node]:
+                queue.append((node, next_node, distance))
 
     return distances
 

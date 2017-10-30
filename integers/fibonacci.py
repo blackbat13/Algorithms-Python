@@ -18,6 +18,6 @@ def fibonacci_recursive(n):
     return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 
 
-n = int(input('Enter number to compute'))
+n = int(input('Enter number to compute: '))
 print(f'Iterative: {fibonacci_iterative(n)}')
 print(f'Recursive: {fibonacci_recursive(n)}')

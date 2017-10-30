@@ -4,8 +4,8 @@ def are_anagrams(a, b):
     return a == b
 
 
-a = input('Enter first string')
-b = input('Enter second string')
+a = input('Enter first string: ')
+b = input('Enter second string: ')
 if are_anagrams(a, b):
     print(f'{a} and {b} are anagrams')
 else:

@@ -11,5 +11,5 @@ def distribute(n):
     return prime_factors
 
 
-n = int(input('Enter number'))
+n = int(input('Enter number: '))
 print(f'Prime factors of {n}: {distribute(n)}')

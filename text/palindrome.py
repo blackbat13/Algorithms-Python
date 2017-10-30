@@ -3,7 +3,7 @@ def is_palindrome(a):
     return a == b
 
 
-a = input('Enter string')
+a = input('Enter string: ')
 if is_palindrome(a):
     print(f'{a} is a palindrome')
 else:

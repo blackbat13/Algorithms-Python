@@ -7,7 +7,7 @@ def is_perfect(n):
     return sum == n
 
 
-n = int(input('Enter number'))
+n = int(input('Enter number: '))
 if is_perfect(n):
     print(f'{n} is a perfect number')
 else:

@@ -26,8 +26,8 @@ def subtraction_gcd(a, b):
         return a
 
 
-a = int(input('Enter a'))
-b = int(input('Enter b'))
+a = int(input('Enter a: '))
+b = int(input('Enter b: '))
 
 print(f'Iterative GCD({a},{b}) = {gcd_iterative(a, b)}')
 print(f'Recursive GCD({a},{b}) = {gcd_recursive(a, b)}')
