@@ -12,7 +12,7 @@ number = int(word)
 
 print(f"You entered {number}. If we add one we will get {number + 1}")
 # Please note that operation word + 1 would result in an error, because word is not a number.
-# That's why we need to parse it as a integer.
+# That's why we need to parse it as an integer.
 
 
 print()
