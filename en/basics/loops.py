@@ -16,16 +16,16 @@ for i in range(0, 10, 2):
 
 print()
 
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print('Looping over elements in array')
-for el in array:
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print('Looping over elements in list')
+for el in list:
     print(el)
 
 print()
 
-print('Looping over elements in array using index')
-for i in range(0, len(array)):
-    print(array[i])
+print('Looping over elements in list using index')
+for i in range(0, len(list)):
+    print(list[i])
 
 print()
 
