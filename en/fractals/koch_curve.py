@@ -1,7 +1,7 @@
 import turtle
 
 
-def koch_curve(rank, length):
+def koch_curve(rank: int, length: float):
     if rank > 0:
         koch_curve(rank - 1, length / 2)
         turtle.left(60)

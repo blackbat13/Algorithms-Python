@@ -1,7 +1,7 @@
 import turtle
 
 
-def peano_curve(rank, angle, length):
+def peano_curve(rank: int, angle: int, length: float):
     if rank > 0:
         turtle.right(angle)
         peano_curve(rank - 1, -angle, length)

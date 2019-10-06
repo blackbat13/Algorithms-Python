@@ -1,7 +1,7 @@
 import turtle
 
 
-def draw_fibonacci(n):
+def draw_fibonacci(n: int):
     f1 = 1
     f2 = 1
     turtle.right(90)

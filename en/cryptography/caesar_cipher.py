@@ -1,8 +1,19 @@
-def is_letter(letter):
-    return ord('a') <= ord(letter) <= ord('z')
+def is_letter(character: str):
+    """
+    Checks if given character is a (small) letter
+    :param character: character to check
+    :return: True if character is a (small) letter, False otherwise
+    """
+    return ord('a') <= ord(character) <= ord('z')
 
 
-def encode(message, k):
+def encode(message: str, k: int):
+    """
+    Encodes message using Caesar Cipher with key k
+    :param message: message to encode
+    :param k: key
+    :return: message encoded using Caesar Cipher with key k
+    """
     encoded = ''
     for i in range(0, len(message)):
         if not is_letter(message[i]):
@@ -18,7 +29,13 @@ def encode(message, k):
     return encoded
 
 
-def decode(message, k):
+def decode(message: str, k: int):
+    """
+        Decodes message using Caesar Cipher with key k
+        :param message: message to encode
+        :param k: key
+        :return: message decoded using Caesar Cipher with key k
+    """
     decoded = ''
     for i in range(0, len(message)):
         if not is_letter(message[i]):

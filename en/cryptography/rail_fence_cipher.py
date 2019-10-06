@@ -1,4 +1,10 @@
 def encode(message: str, key: int):
+    """
+        Encodes message using Rail Fence Cipher with key key
+        :param message: message to encode
+        :param key: key
+        :return: message encode using Rail Fence with key key
+        """
     encoded = ''
     for k in range(0, key):
         if k == key - 1:
@@ -14,6 +20,12 @@ def encode(message: str, key: int):
 
 
 def decode(message: str, key: int):
+    """
+        Decodes message using Rail Fence Cipher with key key
+        :param message: message to encode
+        :param key: key
+        :return: message decoded using Rail Fence Cipher with key key
+    """
     decoded = list(message)
     j = 0
     for k in range(0, key):

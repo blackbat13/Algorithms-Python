@@ -1,8 +1,8 @@
-def is_letter(letter):
+def is_letter(letter: str):
     return ord('a') <= ord(letter) <= ord('z')
 
 
-def encode(message:str, key:str):
+def encode(message: str, key: str):
     encoded = ''
     key_index = 0
     for i in range(0, len(message)):
@@ -22,7 +22,7 @@ def encode(message:str, key:str):
     return encoded
 
 
-def decode(message:str, key:str):
+def decode(message: str, key: str):
     decoded = ''
     key_index = 0
     for i in range(0, len(message)):

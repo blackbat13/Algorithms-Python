@@ -1,7 +1,7 @@
 import turtle
 
 
-def sierpinski_square(rank, length):
+def sierpinski_square(rank: int, length: float):
     if rank == 0:
         turtle.begin_fill()
         for _ in range(0, 4):

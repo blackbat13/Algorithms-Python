@@ -1,8 +1,13 @@
-def is_letter(letter):
-    return ord('a') <= ord(letter) <= ord('z')
+def is_letter(character: str):
+    """
+    Checks if given character is a (small) letter
+    :param character: character to check
+    :return: True if character is a (small) letter, False otherwise
+    """
+    return ord('a') <= ord(character) <= ord('z')
 
 
-def encode(message:str, key:str):
+def encode(message: str, key: str):
     encoded = ''
     key_index = 0
     for i in range(0, len(message)):

@@ -1,7 +1,7 @@
 import turtle
 
 
-def minkowski_curve(rank, length):
+def minkowski_curve(rank: int, length: float):
     if rank > 0:
         turtle.right(30)
         minkowski_curve(rank - 1, length / 2)
@@ -14,7 +14,7 @@ def minkowski_curve(rank, length):
         turtle.forward(length)
 
 
-def minkowski_sausage(rank, length):
+def minkowski_sausage(rank: int, length: float):
     for i in range(0, 4):
         minkowski_curve(rank, length)
         turtle.right(90)
