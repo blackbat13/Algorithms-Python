@@ -1,4 +1,4 @@
-def distribute(n):
+def distribute(n: int) -> list:
     prime_factors = []
     i = 2
     while n > 1:

@@ -1,4 +1,4 @@
-def gcd_iterative(a, b):
+def gcd_iterative(a: int, b: int) -> int:
     while b != 0:
         b2 = b
         b = a % b
@@ -7,13 +7,13 @@ def gcd_iterative(a, b):
     return a
 
 
-def gcd_recursive(a, b):
+def gcd_recursive(a: int, b: int) -> int:
     if b == 0:
         return a
     return gcd_recursive(b, a % b)
 
 
-def subtraction_gcd(a, b):
+def subtraction_gcd(a: int, b: int) -> int:
     while a > 0 and b > 0:
         if a > b:
             a -= b
