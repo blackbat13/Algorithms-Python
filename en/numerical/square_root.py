@@ -1,14 +1,12 @@
 import math
 
 
-def sqrt(n, p):
-    x1 = n / 2
-    x2 = (x1 + n / x1) / 2
+def sqrt(n: int, p: float) -> float:
+    x1: float = n / 2
+    x2: float = (x1 + (n / x1)) / 2
     while math.fabs(x2 - x1) > p:
         x1 = (x2 + n / x2) / 2
-        tmp = x1
-        x1 = x2
-        x2 = tmp
+        x1, x2 = x2, x1
 
     return x2
 

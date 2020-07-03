@@ -1,5 +1,5 @@
-def fast_exp(a, n):
-    w = 1
+def fast_exp(a: int, n: int) -> int:
+    w: int = 1
     while n > 0:
         if n % 2 == 1:
             w *= a

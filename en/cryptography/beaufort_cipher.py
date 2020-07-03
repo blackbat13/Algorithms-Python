@@ -1,4 +1,4 @@
-def is_letter(character: str):
+def is_letter(character: str) -> bool:
     """
     Checks if given character is a (small) letter
     :param character: character to check
@@ -7,10 +7,12 @@ def is_letter(character: str):
     return ord('a') <= ord(character) <= ord('z')
 
 
-def encode(message: str, key: str):
-    encoded = ''
-    key_index = 0
-    for i in range(0, len(message)):
+def encode(message: str, key: str) -> str:
+    encoded: str = ''
+    letter: int = 0
+    key_index: int = 0
+    k: int = 0
+    for i in range(len(message)):
         if not is_letter(message[i]):
             encoded += message[i]
             continue
@@ -20,16 +22,15 @@ def encode(message: str, key: str):
         if letter > ord('z'):
             letter = ord('a') + letter - ord('z')
 
-        letter = chr(letter)
-        encoded += letter
+        encoded += chr(letter)
         key_index += 1
         key_index %= len(key)
 
     return encoded
 
 
-message = 'computer science'
-encoded = encode(message, 'cat')
-decoded = encode(encoded, 'cat')
+message: str = 'computer science'
+encoded: str = encode(message, 'cat')
+decoded: str = encode(encoded, 'cat')
 print(f'Encoded: {encoded}')
 print(f'Decoded: {decoded}')

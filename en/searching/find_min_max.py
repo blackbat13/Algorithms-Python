@@ -1,21 +1,18 @@
-import math
-
-
-def find_min_max_naive(array):
-    min = array[0]
-    max = array[0]
+def find_min_max_naive(array: list) -> (int, int):
+    min: int = array[0]
+    max: int = array[0]
     for i in range(1, len(array)):
         if array[i] < min:
             min = array[i]
         if array[i] > max:
             max = array[i]
 
-    return [min, max]
+    return min, max
 
 
-def find_min_max_optimal(array):
-    min_candidates = []
-    max_candidates = []
+def find_min_max_optimal(array: list) -> (int, int):
+    min_candidates: list = []
+    max_candidates: list = []
     for i in range(1, len(array), 2):
         if array[i - 1] < array[i]:
             min_candidates.append(array[i - 1])
@@ -28,47 +25,50 @@ def find_min_max_optimal(array):
         min_candidates.append(array[len(array) - 1])
         max_candidates.append(array[len(array) - 1])
 
-    min = min_candidates[0]
-    max = max_candidates[0]
+    min: int = min_candidates[0]
+    max: int = max_candidates[0]
     for i in range(1, len(min_candidates)):
         if min > min_candidates[i]:
             min = min_candidates[i]
         if max < max_candidates[i]:
             max = max_candidates[i]
 
-    return [min, max]
+    return min, max
 
 
-def find_min_max_recursive(array, left, right):
+def find_min_max_recursive(array: list, left: int, right: int) -> (int, int):
     if left == right:
         return [array[left], array[left]]
 
-    middle = math.floor((left + right) / 2)
-    left_min_max = find_min_max_recursive(array, left, middle)
-    right_min_max = find_min_max_recursive(array, middle + 1, right)
-    min_max = [0, 0]
+    middle: int = (left + right) // 2
+    left_min_max: (int, int) = find_min_max_recursive(array, left, middle)
+    right_min_max: (int, int) = find_min_max_recursive(array, middle + 1, right)
+    min: int = 0
+    max: int = 0
     if left_min_max[0] < right_min_max[0]:
-        min_max[0] = left_min_max[0]
+        min = left_min_max[0]
     else:
-        min_max[0] = right_min_max[0]
+        min = right_min_max[0]
 
     if left_min_max[1] > right_min_max[1]:
-        min_max[1] = left_min_max[1]
+        max = left_min_max[1]
     else:
-        min_max[1] = right_min_max[1]
+        max = right_min_max[1]
 
-    return min_max
+    return min, max
 
 
-array = [3, 6, 1, 9, 10, 4, -4, 6, 12, 5, 11]
+array: list = [3, 6, 1, 9, 10, 4, -4, 6, 12, 5, 11]
+min: int = 0
+max: int = 0
 print('Naive algorithm: ')
-result = find_min_max_naive(array)
-print(f'Min: {result[0]}, Max: {result[1]}')
+min, max = find_min_max_naive(array)
+print(f'Min: {min}, Max: {max}')
 
 print('Optimal algorithm: ')
-result = find_min_max_optimal(array)
-print(f'Min: {result[0]}, Max: {result[1]}')
+min, max = find_min_max_optimal(array)
+print(f'Min: {min}, Max: {max}')
 
 print('Recursive algorithm: ')
-result = find_min_max_recursive(array, 0, len(array) - 1)
-print(f'Min: {result[0]}, Max: {result[1]}')
+min, max = find_min_max_recursive(array, 0, len(array) - 1)
+print(f'Min: {min}, Max: {max}')

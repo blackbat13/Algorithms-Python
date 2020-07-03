@@ -1,12 +1,14 @@
-def encode(message: str, key: int):
+def encode(message: str, key: int) -> str:
     """
-        Encodes message using Rail Fence Cipher with key key
+        Encodes message using Rail Fence Cipher with given key
         :param message: message to encode
         :param key: key
-        :return: message encode using Rail Fence with key key
+        :return: message encode using Rail Fence with given key
         """
-    encoded = ''
-    for k in range(0, key):
+    encoded: str = ''
+    k: int = 0
+    jump: int = 0
+    for k in range(key):
         if k == key - 1:
             jump = (key - 1) * 2
         else:
@@ -19,16 +21,17 @@ def encode(message: str, key: int):
     return encoded
 
 
-def decode(message: str, key: int):
+def decode(message: str, key: int) -> str:
     """
-        Decodes message using Rail Fence Cipher with key key
+        Decodes message using Rail Fence Cipher with given key
         :param message: message to encode
         :param key: key
-        :return: message decoded using Rail Fence Cipher with key key
+        :return: message decoded using Rail Fence Cipher with given key
     """
-    decoded = list(message)
-    j = 0
-    for k in range(0, key):
+    decoded: list = list(message)
+    j: int = 0
+    jump: int = 0
+    for k in range(key):
         if k == key - 1:
             jump = (key - 1) * 2
         else:
@@ -42,8 +45,8 @@ def decode(message: str, key: int):
     return ''.join(decoded)
 
 
-message = 'computer science'
-encoded = encode(message, 3)
-decoded = decode(encoded, 3)
+message: str = 'computer science'
+encoded: str = encode(message, 3)
+decoded: str = decode(encoded, 3)
 print(f'Encoded: {encoded}')
 print(f'Decoded: {decoded}')

@@ -1,5 +1,8 @@
-def bfs(graph, visited, node):
-    queue = [node]
+from typing import List
+
+
+def bfs(graph: List[List[int]], visited: List[bool], node: int) -> None:
+    queue: List[int] = [node]
 
     while len(queue) > 0:
         node = queue[0]
@@ -15,7 +18,8 @@ def bfs(graph, visited, node):
                 queue.append(new_node)
 
 
-graph = [[], [], [], [], [], [], []]
+visited: List[bool] = []
+graph: List[List[int]] = [[], [], [], [], [], [], []]
 graph[0] = [1, 6]
 graph[1] = [0, 6, 3, 2]
 graph[2] = [1, 3]
@@ -24,7 +28,6 @@ graph[4] = [3, 5]
 graph[5] = [4, 3, 6]
 graph[6] = [0, 1, 3, 5]
 
-visited = []
 for i in range(0, len(graph)):
     visited.append(False)
 

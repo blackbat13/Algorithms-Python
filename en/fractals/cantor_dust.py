@@ -1,7 +1,7 @@
 import turtle
 
 
-def cantor_dust(rank: int, length: float):
+def cantor_dust(rank: int, length: float) -> None:
     if rank > 0:
         cantor_dust(rank - 1, length / 3)
         turtle.penup()
@@ -12,7 +12,7 @@ def cantor_dust(rank: int, length: float):
         turtle.forward(length)
 
 
-def cantor(rank: int, length: float):
+def cantor(rank: int, length: float) -> None:
     for i in range(0, rank + 1):
         cantor_dust(i, length)
         turtle.penup()

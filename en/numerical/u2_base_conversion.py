@@ -1,6 +1,6 @@
 def u2_to_ten(number: str) -> int:
-    power = 2 ** (len(number) - 1)
-    result = 0
+    power: int = 2 ** (len(number) - 1)
+    result: int = 0
     if number[0] == "1":
         result -= power
     for index in range(1, len(number)):

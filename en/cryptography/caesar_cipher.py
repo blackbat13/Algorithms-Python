@@ -1,4 +1,4 @@
-def is_letter(character: str):
+def is_letter(character: str) -> bool:
     """
     Checks if given character is a (small) letter
     :param character: character to check
@@ -7,52 +7,52 @@ def is_letter(character: str):
     return ord('a') <= ord(character) <= ord('z')
 
 
-def encode(message: str, k: int):
+def encode(message: str, key: int) -> str:
     """
-    Encodes message using Caesar Cipher with key k
+    Encodes message using Caesar Cipher with given key
     :param message: message to encode
-    :param k: key
-    :return: message encoded using Caesar Cipher with key k
+    :param key: key
+    :return: message encoded using Caesar Cipher with given key
     """
-    encoded = ''
-    for i in range(0, len(message)):
+    encoded: str = ''
+    letter: int = 0
+    for i in range(len(message)):
         if not is_letter(message[i]):
             encoded += message[i]
             continue
-        letter = ord(message[i]) + k
+        letter = ord(message[i]) + key
         if letter > ord('z'):
             letter = ord('a') + letter - ord('z')
 
-        letter = chr(letter)
-        encoded += letter
+        encoded += chr(letter)
 
     return encoded
 
 
-def decode(message: str, k: int):
+def decode(message: str, key: int) -> str:
     """
-        Decodes message using Caesar Cipher with key k
+        Decodes message using Caesar Cipher with given key
         :param message: message to encode
-        :param k: key
-        :return: message decoded using Caesar Cipher with key k
+        :param key: key
+        :return: message decoded using Caesar Cipher with given key
     """
-    decoded = ''
-    for i in range(0, len(message)):
+    decoded: str = ''
+    letter: int = 0
+    for i in range(len(message)):
         if not is_letter(message[i]):
             decoded += message[i]
             continue
-        letter = ord(message[i]) - k
+        letter = ord(message[i]) - key
         if letter < ord('a'):
             letter = ord('z') - (ord('a') - letter)
 
-        letter = chr(letter)
-        decoded += letter
+        decoded += chr(letter)
 
     return decoded
 
 
-message = 'computer science'
-encoded = encode(message, 3)
-decoded = decode(encoded, 3)
+message: str = 'computer science'
+encoded: str = encode(message, 3)
+decoded: str = decode(encoded, 3)
 print(f'Encoded: {encoded}')
 print(f'Decoded: {decoded}')

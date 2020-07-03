@@ -1,12 +1,17 @@
-def dijkstra(graph, node):
-    distances = []
-    for i in range(0, len(graph)):
+from typing import List
+
+
+def dijkstra(graph: List[List[(int, int)]], node: int) -> List[int]:
+    distances: List[int] = []
+    queue: List[(int, int, int)] = []
+
+    for i in range(len(graph)):
         distances.append(10000000)
     distances[node] = 0
 
-    queue = []
     for (next_node, distance) in graph[node]:
         queue.append((node, next_node, distance))
+
     while len(queue) > 0:
         node = queue[0][1]
         from_node = queue[0][0]
@@ -20,7 +25,7 @@ def dijkstra(graph, node):
     return distances
 
 
-graph = [[], [], [], [], [], [], []]
+graph: List[List[(int, int)]] = [[], [], [], [], [], [], []]
 graph[0] = [(1, 5), (6, 5)]
 graph[1] = [(0, 5), (6, 5), (3, 3), (2, 3)]
 graph[2] = [(1, 3), (3, 1)]

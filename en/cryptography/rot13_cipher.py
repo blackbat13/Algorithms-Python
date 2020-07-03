@@ -1,10 +1,11 @@
-def is_letter(letter: str):
+def is_letter(letter: str) -> bool:
     return ord('a') <= ord(letter) <= ord('z')
 
 
-def encode(message: str):
-    encoded = ''
-    for i in range(0, len(message)):
+def encode(message: str) -> str:
+    encoded: str = ''
+    letter: int = 0
+    for i in range(len(message)):
         if not is_letter(message[i]):
             encoded += message[i]
             continue
@@ -12,15 +13,15 @@ def encode(message: str):
         if letter > ord('z'):
             letter = ord('a') + letter - ord('z')
 
-        letter = chr(letter)
-        encoded += letter
+        encoded += chr(letter)
 
     return encoded
 
 
-def decode(message: str):
-    decoded = ''
-    for i in range(0, len(message)):
+def decode(message: str) -> str:
+    decoded: str = ''
+    letter: int = 0
+    for i in range(len(message)):
         if not is_letter(message[i]):
             decoded += message[i]
             continue
@@ -28,14 +29,13 @@ def decode(message: str):
         if letter < ord('a'):
             letter = ord('z') - (ord('a') - letter)
 
-        letter = chr(letter)
-        decoded += letter
+        decoded += chr(letter)
 
     return decoded
 
 
-message = 'computer science'
-encoded = encode(message)
-decoded = decode(encoded)
+message: str = 'computer science'
+encoded: str = encode(message)
+decoded: str = decode(encoded)
 print(f'Encoded: {encoded}')
 print(f'Decoded: {decoded}')

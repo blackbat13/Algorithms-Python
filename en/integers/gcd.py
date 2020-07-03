@@ -1,4 +1,5 @@
 def gcd_iterative(a: int, b: int) -> int:
+    b2: int = 0
     while b != 0:
         b2 = b
         b = a % b
@@ -26,8 +27,8 @@ def subtraction_gcd(a: int, b: int) -> int:
         return a
 
 
-a = int(input('Enter a: '))
-b = int(input('Enter b: '))
+a: int = int(input('Enter a: '))
+b: int = int(input('Enter b: '))
 
 print(f'Iterative GCD({a},{b}) = {gcd_iterative(a, b)}')
 print(f'Recursive GCD({a},{b}) = {gcd_recursive(a, b)}')

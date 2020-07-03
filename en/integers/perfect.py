@@ -1,5 +1,5 @@
 def is_perfect(n: int) -> bool:
-    sum = 0
+    sum: int = 0
     for i in range(1, n):
         if n % i == 0:
             sum += i
@@ -7,7 +7,7 @@ def is_perfect(n: int) -> bool:
     return sum == n
 
 
-n = int(input('Enter number: '))
+n: int = int(input('Enter number: '))
 if is_perfect(n):
     print(f'{n} is a perfect number')
 else:

@@ -1,7 +1,7 @@
 import turtle
 
 
-def koch_curve(rank: int, length: float):
+def koch_curve(rank: int, length: float) -> None:
     if rank > 0:
         koch_curve(rank - 1, length / 2)
         turtle.left(60)
@@ -14,7 +14,7 @@ def koch_curve(rank: int, length: float):
         turtle.forward(length)
 
 
-def koch_snowflake(rank: int, length: float):
+def koch_snowflake(rank: int, length: float) -> None:
     for i in range(0, 3):
         koch_curve(rank, length)
         turtle.right(120)

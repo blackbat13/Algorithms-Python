@@ -1,9 +1,9 @@
 import turtle
 
 
-def sieve(n: int):
-    prime = [False, False]
-    result = []
+def sieve(n: int) -> list:
+    prime: list = [False, False]
+    result: list = []
     for i in range(2, n + 1):
         prime.append(True)
 
@@ -18,8 +18,8 @@ def sieve(n: int):
     return result
 
 
-def draw_prime(n: int):
-    prime_numbers = sieve(n)
+def draw_prime(n: int) -> None:
+    prime_numbers: list = sieve(n)
 
     for prime in prime_numbers:
         turtle.forward(prime)

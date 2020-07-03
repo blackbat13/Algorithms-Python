@@ -1,20 +1,23 @@
 import random
 
 
-def monte_carlo_pi(no_points):
-    no_points_in_circle = 0
-    center_x = 1
-    center_y = 1
-    radius = 1
-    for _ in range(0, no_points):
+def monte_carlo_pi(points_count: int) -> float:
+    num_points_in_circle: int = 0
+    center_x: int = 1
+    center_y: int = 1
+    radius: int = 1
+    x: float = 0
+    y: float = 0
+    distance: float = 0
+    for _ in range(points_count):
         x = random.random() * 2.0
         y = random.random() * 2.0
         distance = ((x - center_x) ** 2) + ((y - center_y) ** 2)
         if distance <= radius ** 2:
-            no_points_in_circle += 1
+            num_points_in_circle += 1
 
-    return (4 * no_points_in_circle) / no_points
+    return (4 * num_points_in_circle) / points_count
 
 
-no_points = int(input('Number of points: '))
-print(f'Estimated value of PI is: {monte_carlo_pi(no_points)}')
+points_count: int = int(input('Number of points: '))
+print(f'Estimated value of PI is: {monte_carlo_pi(points_count)}')

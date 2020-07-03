@@ -1,9 +1,9 @@
-coins = [200, 100, 50, 20, 10, 5, 2, 1]
+coins: list = [200, 100, 50, 20, 10, 5, 2, 1]
 
 
 def change_greedy(amount: int) -> int:
-    result = 0
-    i = 0
+    result: int = 0
+    i: int = 0
     while amount > 0:
         result += int(amount / coins[i])
         amount %= coins[i]
@@ -13,9 +13,9 @@ def change_greedy(amount: int) -> int:
 
 
 def change_dynamic(amount: int) -> None:
-    partial_results = []
-    used_coins = []
-    infinity = 10000000
+    partial_results: list = []
+    used_coins: list = []
+    infinity: int = 10000000
 
     for i in range(0, amount + 1):
         partial_results.append(infinity)
@@ -23,7 +23,7 @@ def change_dynamic(amount: int) -> None:
 
     partial_results[0] = 0
 
-    number_of_coins = int(input('Enter number of coins: '))
+    number_of_coins: int = int(input('Enter number of coins: '))
 
     for j in range(0, number_of_coins):
         coin_value = int(input('Enter next coin value: '))
@@ -38,13 +38,13 @@ def change_dynamic(amount: int) -> None:
 
     print(f'Amount {amount} can be given out using {partial_results[amount]} coins')
     print('Used coins:')
-    i = amount
+    i: int = amount
     while i > 0:
         print(used_coins[i])
         i -= used_coins[i]
 
 
-amount = int(input('Enter amount: '))
+amount: int = int(input('Enter amount: '))
 print('Greedy algorithm')
 print(f'Amount {amount} can be given out using {change_greedy(amount)} coins')
 print('Dynamic algorithm')

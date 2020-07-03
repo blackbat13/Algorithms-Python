@@ -1,5 +1,6 @@
-def from_ten(number, new_base):
-    converted = ""
+def from_ten(number: int, new_base: int) -> str:
+    converted: str = ""
+    rest: int = 0
     while number > 0:
         rest = number % new_base
         number -= rest
@@ -12,10 +13,10 @@ def from_ten(number, new_base):
     return converted
 
 
-def to_ten(number, base):
-    converted = 0
-    power = 1
-    i = len(number) - 1
+def to_ten(number: str, base: int) -> int:
+    converted: int = 0
+    power: int = 1
+    i: int = len(number) - 1
     while i >= 0:
         if ord(number[i]) <= ord('9'):
             converted += int(number[i]) * power
@@ -28,8 +29,8 @@ def to_ten(number, base):
     return converted
 
 
-number = 241
-base = 16
-converted = from_ten(number, base)
+number: int = 241
+base: int = 16
+converted: str = from_ten(number, base)
 print(f'{number} in {base} is {converted}')
 print(f'{converted} in 10 is {to_ten(converted, base)}')

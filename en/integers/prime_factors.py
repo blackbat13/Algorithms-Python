@@ -1,6 +1,9 @@
-def distribute(n: int) -> list:
-    prime_factors = []
-    i = 2
+from typing import List
+
+
+def distribute(n: int) -> List[int]:
+    prime_factors: List[int] = []
+    i: int = 2
     while n > 1:
         if n % i == 0:
             prime_factors.append(i)
@@ -11,5 +14,5 @@ def distribute(n: int) -> list:
     return prime_factors
 
 
-n = int(input('Enter number: '))
+n: int = int(input('Enter number: '))
 print(f'Prime factors of {n}: {distribute(n)}')

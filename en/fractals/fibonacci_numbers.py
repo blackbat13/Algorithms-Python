@@ -1,9 +1,9 @@
 import turtle
 
 
-def draw_fibonacci(n: int):
-    f1 = 1
-    f2 = 1
+def draw_fibonacci(n: int) -> None:
+    f1: int = 1
+    f2: int = 1
     turtle.right(90)
     for i in range(0, n):
         turtle.forward(f1)

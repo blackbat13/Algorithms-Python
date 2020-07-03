@@ -1,7 +1,7 @@
 import turtle
 
 
-def dragon_curve(rank: int, sign: int, length: float):
+def dragon_curve(rank: int, sign: int, length: float) -> None:
     if rank > 0:
         turtle.left(45 * sign)
         dragon_curve(rank - 1, 1, length)
