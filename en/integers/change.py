@@ -1,7 +1,7 @@
 coins = [200, 100, 50, 20, 10, 5, 2, 1]
 
 
-def change_greedy(amount):
+def change_greedy(amount: int) -> int:
     result = 0
     i = 0
     while amount > 0:
@@ -12,7 +12,7 @@ def change_greedy(amount):
     return result
 
 
-def change_dynamic(amount):
+def change_dynamic(amount: int) -> None:
     partial_results = []
     used_coins = []
     infinity = 10000000

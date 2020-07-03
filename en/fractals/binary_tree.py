@@ -1,7 +1,7 @@
 import turtle
 
 
-def binary_tree(rank: int, length: float):
+def binary_tree(rank: int, length: float) -> None:
     turtle.forward(length)
     if rank > 0:
         turtle.left(45)

@@ -1,4 +1,4 @@
-def sieve(n):
+def sieve(n: int) -> list:
     prime = [False, False]
     for i in range(2, n + 1):
         prime.append(True)
@@ -13,7 +13,7 @@ def sieve(n):
     return prime
 
 
-def print_prime_numbers(prime):
+def print_prime_numbers(prime: list) -> None:
     for i in range(0, len(prime)):
         if prime[i]:
             print(i)
