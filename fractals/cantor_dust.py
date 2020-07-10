@@ -13,7 +13,7 @@ def cantor_dust(rank: int, length: float) -> None:
 
 
 def cantor(rank: int, length: float) -> None:
-    for i in range(0, rank + 1):
+    for i in range(rank + 1):
         cantor_dust(i, length)
         turtle.penup()
         turtle.back(length)
@@ -27,6 +27,6 @@ turtle.speed(0)
 turtle.penup()
 turtle.back(250)
 turtle.pendown()
-cantor(5, 500)
+cantor(5, 729)
 turtle.hideturtle()
 turtle.done()

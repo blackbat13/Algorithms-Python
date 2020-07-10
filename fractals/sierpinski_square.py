@@ -4,14 +4,14 @@ import turtle
 def sierpinski_square(rank: int, length: float) -> None:
     if rank == 0:
         turtle.begin_fill()
-        for _ in range(0, 4):
+        for _ in range(4):
             turtle.forward(length)
             turtle.left(90)
         turtle.end_fill()
         return
 
-    for _ in range(0, 4):
-        for _ in range(0, 2):
+    for _ in range(4):
+        for _ in range(2):
             turtle.forward(length / 3)
             sierpinski_square(rank - 1, length / 3)
         turtle.forward(length / 3)
