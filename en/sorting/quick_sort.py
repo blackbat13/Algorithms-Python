@@ -1,13 +1,10 @@
-import math
-
-
-def quick_sort(array, left, right):
+def quick_sort(array: list, left: int, right: int):
     if right <= left:
         return
 
-    pivot = array[math.floor((left + right) / 2)]
-    i = left
-    j = right
+    pivot = array[(left + right) // 2]
+    i: int = left
+    j: int = right
     while i <= j:
         while array[i] < pivot:
             i += 1
@@ -18,9 +15,7 @@ def quick_sort(array, left, right):
         if i > j:
             break
 
-        tmp = array[i]
-        array[i] = array[j]
-        array[j] = tmp
+        array[i], array[j] = array[j], array[i]
 
         i += 1
         j -= 1
@@ -29,6 +24,6 @@ def quick_sort(array, left, right):
     quick_sort(array, i, right)
 
 
-array = [7, 3, 0, 1, 5, 2, 5, 19, 10, 5]
+array: list = [7, 3, 0, 1, 5, 2, 5, 19, 10, 5]
 quick_sort(array, 0, len(array) - 1)
 print(array)

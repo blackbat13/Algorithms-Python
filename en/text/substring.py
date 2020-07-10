@@ -1,6 +1,6 @@
-def substring_pos(a, b):
-    for i in range(0, len(a) - len(b)):
-        j = 0
+def substring_pos(a: str, b: str) -> int:
+    for i in range(len(a) - len(b)):
+        j: int = 0
         while j < len(b) and b[j] == a[i + j]:
             j += 1
 
@@ -10,10 +10,10 @@ def substring_pos(a, b):
     return -1
 
 
-a = input('Enter string to search in: ')
-b = input('Enter string to search for: ')
+a: str = input('Enter string to search in: ')
+b: str = input('Enter string to search for: ')
 
-pos = substring_pos(a, b)
+pos: int = substring_pos(a, b)
 if pos == -1:
     print(f'{b} is not a substring of {a}')
 else:
