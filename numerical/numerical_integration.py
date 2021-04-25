@@ -3,9 +3,9 @@ def f(x: float) -> float:
 
 
 def rectangles_method(a: int, b: int, n: int) -> float:
-    rectangle_width: float = (b - a) / n
-    area: float = 0
-    current_point: float = a
+    rectangle_width = (b - a) / n
+    area = 0
+    current_point = a
 
     for i in range(n):
         current_point += rectangle_width
@@ -16,9 +16,9 @@ def rectangles_method(a: int, b: int, n: int) -> float:
 
 
 def trapezes_method(a: int, b: int, n: int) -> float:
-    trapeze_height: float = (b - a) / n
-    area: float = 0
-    current_point: float = a
+    trapeze_height = (b - a) / n
+    area = 0
+    current_point = a
 
     for i in range(n):
         trapeze_first_side = f(current_point)
@@ -29,8 +29,8 @@ def trapezes_method(a: int, b: int, n: int) -> float:
     return area
 
 
-a: int = 0
-b: int = 10
-n: int = 100
+a = 0
+b = 10
+n = 100
 print(f'Rectangles method result: {rectangles_method(a, b, n)}')
 print(f'Trapezes method result: {trapezes_method(a, b, n)}')

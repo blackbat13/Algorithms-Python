@@ -3,8 +3,8 @@ def quick_sort(array: list, left: int, right: int):
         return
 
     pivot = array[(left + right) // 2]
-    i: int = left
-    j: int = right
+    i = left
+    j = right
     while i <= j:
         while array[i] < pivot:
             i += 1
@@ -24,6 +24,6 @@ def quick_sort(array: list, left: int, right: int):
     quick_sort(array, i, right)
 
 
-array: list = [7, 3, 0, 1, 5, 2, 5, 19, 10, 5]
+array = [7, 3, 0, 1, 5, 2, 5, 19, 10, 5]
 quick_sort(array, 0, len(array) - 1)
 print(array)

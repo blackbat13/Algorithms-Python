@@ -1,7 +1,7 @@
-from typing import List
+from typing import List, Tuple
 
 
-def dijkstra(graph: List[List[(int, int)]], node: int) -> List[int]:
+def dijkstra(graph: List[List[Tuple[int, int]]], node: int) -> List[int]:
     distances: List[int] = []
     queue: List[(int, int, int)] = []
 
@@ -25,7 +25,7 @@ def dijkstra(graph: List[List[(int, int)]], node: int) -> List[int]:
     return distances
 
 
-graph: List[List[(int, int)]] = [[], [], [], [], [], [], []]
+graph: List[List[Tuple[int, int]]] = [[], [], [], [], [], [], []]
 graph[0] = [(1, 5), (6, 5)]
 graph[1] = [(0, 5), (6, 5), (3, 3), (2, 3)]
 graph[2] = [(1, 3), (3, 1)]

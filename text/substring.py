@@ -10,10 +10,10 @@ def substring_pos(a: str, b: str) -> int:
     return -1
 
 
-a: str = input('Enter string to search in: ')
-b: str = input('Enter string to search for: ')
+a = input('Enter string to search in: ')
+b = input('Enter string to search for: ')
 
-pos: int = substring_pos(a, b)
+pos = substring_pos(a, b)
 if pos == -1:
     print(f'{b} is not a substring of {a}')
 else:

@@ -17,13 +17,13 @@ for i in range(0, 10, 2):
 print()
 
 list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print('Looping over elements in list')
+print('Looping over elements in a list')
 for el in list:
     print(el)
 
 print()
 
-print('Looping over elements in list using index')
+print('Looping over elements in a list using index')
 for i in range(0, len(list)):
     print(list[i])
 

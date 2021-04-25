@@ -1,6 +1,6 @@
 def u2_to_ten(number: str) -> int:
-    power: int = 2 ** (len(number) - 1)
-    result: int = 0
+    power = 2 ** (len(number) - 1)
+    result = 0
     if number[0] == "1":
         result -= power
     for index in range(1, len(number)):
@@ -12,4 +12,6 @@ def u2_to_ten(number: str) -> int:
     return result
 
 
-print(f"10000001_u2 in ten: {u2_to_ten('10000001')}")
+number_u2 = "10000001"
+number_ten = u2_to_ten(number_u2)
+print(f"{number_u2} (U2) = {number_ten} (10)")

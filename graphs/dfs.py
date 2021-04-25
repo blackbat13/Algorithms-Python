@@ -1,7 +1,7 @@
 from typing import List
 
 
-def dfs(graph: List[List[int]], visited: List[bool], node: int) -> None:
+def dfs(graph: List[List[int]], visited: List[bool], node: int):
     if visited[node]:
         return
 
@@ -13,7 +13,6 @@ def dfs(graph: List[List[int]], visited: List[bool], node: int) -> None:
             dfs(graph, visited, new_node)
 
 
-visited: List[bool] = []
 graph: List[List[int]] = [[], [], [], [], [], [], []]
 graph[0] = [1, 6]
 graph[1] = [0, 6, 3, 2]
@@ -23,7 +22,6 @@ graph[4] = [3, 5]
 graph[5] = [4, 3, 6]
 graph[6] = [0, 1, 3, 5]
 
-for i in range(0, len(graph)):
-    visited.append(False)
+visited: List[bool] = [False for _ in range(len(graph))]
 
 dfs(graph, visited, 0)

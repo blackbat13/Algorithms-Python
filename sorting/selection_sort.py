@@ -1,5 +1,5 @@
-def find_min(array: list, begin: int):
-    min_index: int = begin
+def find_min(array: list, begin: int) -> int:
+    min_index = begin
     for i in range(begin + 1, len(array)):
         if array[i] < array[min_index]:
             min_index = i
@@ -13,6 +13,6 @@ def selection_sort(array: list):
         array[i], array[min_index] = array[min_index], array[i]
 
 
-array: list = [7, 3, 0, 1, 5, 2, 5, 19, 10, 5]
+array = [7, 3, 0, 1, 5, 2, 5, 19, 10, 5]
 selection_sort(array)
 print(array)

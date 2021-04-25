@@ -1,13 +1,13 @@
 def point_on_segment(a_x: int, a_y: int, b_x: int, b_y: int, c_x: int, c_y: int) -> bool:
     """
-        Check if point (c_x, c_y) lies on the segment [(a_x, a_y), (b_x, b_y)]
+    Check if point (c_x, c_y) lies on the segment [(a_x, a_y), (b_x, b_y)]
     :return: True if point lies on the given segment, False otherwise
     """
     # matrix = [
     #     [a_x, a_y, 1],
     #     [b_x, b_y, 1],
     #     [c_x, c_y, 1]]
-    det: int = a_x * b_y * 1 + b_x * c_y * 1 + c_x * a_y * 1 - b_x * a_y * 1 - a_x * c_y * 1 - c_x * b_y * 1
+    det = a_x * b_y * 1 + b_x * c_y * 1 + c_x * a_y * 1 - b_x * a_y * 1 - a_x * c_y * 1 - c_x * b_y * 1
     if det != 0:
         return False
 

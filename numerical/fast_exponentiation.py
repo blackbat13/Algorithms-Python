@@ -1,11 +1,11 @@
 def fast_exp(a: int, n: int) -> int:
-    w: int = 1
+    w = 1
     while n > 0:
         if n % 2 == 1:
             w *= a
 
         a *= a
-        n = int(n / 2)
+        n = n // 2
 
     return w
 

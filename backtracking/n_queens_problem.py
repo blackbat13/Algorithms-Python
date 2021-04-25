@@ -23,9 +23,9 @@ def check_new_position(x: int, y: int, positions: list) -> bool:
     return True
 
 
-n: int = 5
-positions: list = [0 for _ in range(n)]
-result: bool = find_solution(n, 0, positions)
+n = 5
+positions = [0 for _ in range(n)]
+result = find_solution(n, 0, positions)
 if result:
     print(positions)
 else:

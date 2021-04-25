@@ -1,8 +1,8 @@
 def is_palindrome(a: str) -> bool:
-    return a == ''.join(reversed(a))
+    return a == a[::-1]
 
 
-a: str = input('Enter string: ')
+a = input('Enter string: ')
 if is_palindrome(a):
     print(f'{a} is a palindrome')
 else:

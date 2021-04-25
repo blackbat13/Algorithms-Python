@@ -1,22 +1,22 @@
 def from_ten(number: int, new_base: int) -> str:
-    converted: str = ""
-    rest: int = 0
+    converted = ""
+    remainder = 0
     while number > 0:
-        rest = number % new_base
-        number -= rest
+        remainder = number % new_base
+        number -= remainder
         number = int(number / new_base)
-        if rest > 9:
-            converted = chr(ord('A') + rest - 10) + converted
+        if remainder > 9:
+            converted = chr(ord('A') + remainder - 10) + converted
         else:
-            converted = str(rest) + converted
+            converted = str(remainder) + converted
 
     return converted
 
 
 def to_ten(number: str, base: int) -> int:
-    converted: int = 0
-    power: int = 1
-    i: int = len(number) - 1
+    converted = 0
+    power = 1
+    i = len(number) - 1
     while i >= 0:
         if ord(number[i]) <= ord('9'):
             converted += int(number[i]) * power
@@ -29,8 +29,8 @@ def to_ten(number: str, base: int) -> int:
     return converted
 
 
-number: int = 241
-base: int = 16
-converted: str = from_ten(number, base)
-print(f'{number} in {base} is {converted}')
-print(f'{converted} in 10 is {to_ten(converted, base)}')
+number = 241
+base = 16
+converted = from_ten(number, base)
+print(f'{number} (10) = {converted} ({base})')
+print(f'{converted} ({base}) = {to_ten(converted, base)} (10)')

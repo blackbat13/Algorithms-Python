@@ -1,6 +1,6 @@
 def find_leader(array: list) -> int:
-    counter: int = 0
-    current_candidate: int = 0
+    counter = 0
+    current_candidate = 0
     for el in array:
         if counter == 0:
             current_candidate = el
@@ -15,7 +15,7 @@ def find_leader(array: list) -> int:
 
 
 def count_occurrences(element: int, array: list) -> int:
-    count: int = 0
+    count = 0
     for el in array:
         if el == element:
             count += 1
@@ -23,8 +23,8 @@ def count_occurrences(element: int, array: list) -> int:
     return count
 
 
-array: list = [1, 2, 5, 5, 7, 5, 5, 10, 5, 5]
-majority: int = find_leader(array)
+array = [1, 2, 5, 5, 7, 5, 5, 10, 5, 5]
+majority = find_leader(array)
 if count_occurrences(majority, array) >= len(array) / 2:
     print(f'Majority element is: {majority}')
 else:

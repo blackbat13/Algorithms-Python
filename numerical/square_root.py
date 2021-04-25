@@ -2,8 +2,8 @@ import math
 
 
 def sqrt(n: int, p: float) -> float:
-    x1: float = n / 2
-    x2: float = (x1 + (n / x1)) / 2
+    x1 = n / 2
+    x2 = (x1 + (n / x1)) / 2
     while math.fabs(x2 - x1) > p:
         x1 = (x2 + n / x2) / 2
         x1, x2 = x2, x1
