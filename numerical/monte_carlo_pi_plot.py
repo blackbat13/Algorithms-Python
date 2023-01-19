@@ -1,5 +1,7 @@
 import random
 
+import matplotlib.pyplot as plt
+
 
 def monte_carlo_pi(points_count: int) -> float:
     """Computes the estimated value of PI using a Monte Carlo method.
@@ -17,14 +19,22 @@ def monte_carlo_pi(points_count: int) -> float:
     x = 0
     y = 0
     distance = 0
+    plot_values = []
 
-    for _ in range(points_count):
+    for i in range(1, points_count + 1):
         x = random.random() * 2.0
         y = random.random() * 2.0
         distance = ((x - center_x) ** 2) + ((y - center_y) ** 2)
 
         if distance <= radius ** 2:
             num_points_in_circle += 1
+
+        plot_values.append((4 * num_points_in_circle) / i)
+
+    plt.plot(plot_values)
+    plt.xlabel("Number of points")
+    plt.ylabel("Estimated PI value")
+    plt.title("Monte Carlo method for computing PI value")
 
     return (4 * num_points_in_circle) / points_count
 
@@ -34,3 +44,5 @@ points_count = 1000
 estimated_pi = monte_carlo_pi(points_count)
 
 print(f"PI ~= {estimated_pi}")
+
+plt.show()
