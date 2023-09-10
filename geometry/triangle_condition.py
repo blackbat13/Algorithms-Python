@@ -7,6 +7,6 @@ b = 8
 c = 9
 
 if can_create_triangle(a, b, c):
-    print(f'Triangle can be created from {a}, {b} and {c}')
+    print(f"Triangle can be created from {a}, {b} and {c}")
 else:
-    print(f'Triangle cannot be created from {a}, {b} and {c}')
+    print(f"Triangle cannot be created from {a}, {b} and {c}")
