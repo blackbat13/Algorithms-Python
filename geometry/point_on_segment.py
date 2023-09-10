@@ -1,20 +1,29 @@
-def point_on_segment(a_x: int, a_y: int, b_x: int, b_y: int, c_x: int, c_y: int) -> bool:
-    """
-    Check if point (c_x, c_y) lies on the segment [(a_x, a_y), (b_x, b_y)]
-    :return: True if point lies on the given segment, False otherwise
-    """
-    # matrix = [
-    #     [a_x, a_y, 1],
-    #     [b_x, b_y, 1],
-    #     [c_x, c_y, 1]]
-    det = a_x * b_y * 1 + b_x * c_y * 1 + c_x * a_y * 1 - b_x * a_y * 1 - a_x * c_y * 1 - c_x * b_y * 1
-    if det != 0:
+def det3(matrix: list) -> int:
+    return matrix[0][0] * matrix[1][1] * matrix[2][2] + matrix[1][0] * matrix[2][1] * matrix[0][2] + matrix[2][0] * \
+           matrix[0][1] * matrix[1][2] - matrix[0][2] * matrix[1][1] * matrix[2][0] - matrix[0][1] * matrix[1][0] * \
+           matrix[2][2] - matrix[0][0] * matrix[1][2] * matrix[2][1]
+
+
+def point_on_segment(a: dict, b: dict, c: dict) -> bool:
+    matrix = [
+         [a["x"], a["y"], 1],
+         [b["x"], b["y"], 1],
+         [c["x"], c["y"], 1]]
+    
+    if det3(matrix) != 0:
         return False
 
-    if min(a_x, b_x) <= c_x <= max(a_x, b_x) and min(a_y, b_y) <= c_y <= max(a_y, b_y):
-        return True
+    return min(a["x"], b["x"]) <= c["x"] <= max(a["x"], b["x"]) and min(a["y"], b["y"]) <= c["y"] <= max(a["y"], b["y"])
+
+
+if __name__ == "__main__":
+    a = {"x": 1, "y": 1}
+    b = {"x": 5, "y": 5}
+    c = {"x": 2, "y": 2}
+
+    result = point_on_segment(a, b, c)
+
+    if result:
+        print(f"Point ({c['x']}, {c['y']}) on segment [({a['x']}, {a['y']}), ({b['x']}, {b['y']})]")
     else:
-        return False
-
-
-print(point_on_segment(1, 1, 5, 5, 2, 2))
+        print(f"Point ({c['x']}, {c['y']}) not on segment [({a['x']}, {a['y']}), ({b['x']}, {b['y']})]")
